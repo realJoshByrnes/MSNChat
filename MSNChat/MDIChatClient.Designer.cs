@@ -1,3 +1,5 @@
+using System.Reflection.Metadata;
+
 namespace MSNChat
 {
     partial class MDIChatClient
@@ -99,7 +101,7 @@ namespace MSNChat
       menuStrip.MdiWindowListItem = windowsMenu;
       menuStrip.Name = "menuStrip";
       menuStrip.Padding = new Padding(7, 2, 0, 2);
-      menuStrip.Size = new Size(737, 24);
+      menuStrip.Size = new Size(838, 24);
       menuStrip.TabIndex = 0;
       menuStrip.Text = "MenuStrip";
       // 
@@ -118,7 +120,7 @@ namespace MSNChat
       newToolStripMenuItem.ImageTransparentColor = Color.Black;
       newToolStripMenuItem.Name = "newToolStripMenuItem";
       newToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
-      newToolStripMenuItem.Size = new Size(180, 22);
+      newToolStripMenuItem.Size = new Size(146, 22);
       newToolStripMenuItem.Text = "&New";
       newToolStripMenuItem.Click += ShowNewForm;
       // 
@@ -129,14 +131,14 @@ namespace MSNChat
       openToolStripMenuItem.ImageTransparentColor = Color.Black;
       openToolStripMenuItem.Name = "openToolStripMenuItem";
       openToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
-      openToolStripMenuItem.Size = new Size(180, 22);
+      openToolStripMenuItem.Size = new Size(146, 22);
       openToolStripMenuItem.Text = "&Open";
       openToolStripMenuItem.Click += OpenFile;
       // 
       // toolStripSeparator3
       // 
       toolStripSeparator3.Name = "toolStripSeparator3";
-      toolStripSeparator3.Size = new Size(177, 6);
+      toolStripSeparator3.Size = new Size(143, 6);
       // 
       // saveToolStripMenuItem
       // 
@@ -145,21 +147,21 @@ namespace MSNChat
       saveToolStripMenuItem.ImageTransparentColor = Color.Black;
       saveToolStripMenuItem.Name = "saveToolStripMenuItem";
       saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
-      saveToolStripMenuItem.Size = new Size(180, 22);
+      saveToolStripMenuItem.Size = new Size(146, 22);
       saveToolStripMenuItem.Text = "&Save";
       // 
       // saveAsToolStripMenuItem
       // 
       saveAsToolStripMenuItem.Enabled = false;
       saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-      saveAsToolStripMenuItem.Size = new Size(180, 22);
+      saveAsToolStripMenuItem.Size = new Size(146, 22);
       saveAsToolStripMenuItem.Text = "Save &As";
       saveAsToolStripMenuItem.Click += SaveAsToolStripMenuItem_Click;
       // 
       // toolStripSeparator4
       // 
       toolStripSeparator4.Name = "toolStripSeparator4";
-      toolStripSeparator4.Size = new Size(177, 6);
+      toolStripSeparator4.Size = new Size(143, 6);
       // 
       // printToolStripMenuItem
       // 
@@ -168,7 +170,7 @@ namespace MSNChat
       printToolStripMenuItem.ImageTransparentColor = Color.Black;
       printToolStripMenuItem.Name = "printToolStripMenuItem";
       printToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.P;
-      printToolStripMenuItem.Size = new Size(180, 22);
+      printToolStripMenuItem.Size = new Size(146, 22);
       printToolStripMenuItem.Text = "&Print";
       // 
       // printPreviewToolStripMenuItem
@@ -177,25 +179,25 @@ namespace MSNChat
       printPreviewToolStripMenuItem.Image = (Image)resources.GetObject("printPreviewToolStripMenuItem.Image");
       printPreviewToolStripMenuItem.ImageTransparentColor = Color.Black;
       printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-      printPreviewToolStripMenuItem.Size = new Size(180, 22);
+      printPreviewToolStripMenuItem.Size = new Size(146, 22);
       printPreviewToolStripMenuItem.Text = "Print Pre&view";
       // 
       // printSetupToolStripMenuItem
       // 
       printSetupToolStripMenuItem.Enabled = false;
       printSetupToolStripMenuItem.Name = "printSetupToolStripMenuItem";
-      printSetupToolStripMenuItem.Size = new Size(180, 22);
+      printSetupToolStripMenuItem.Size = new Size(146, 22);
       printSetupToolStripMenuItem.Text = "Print Setup";
       // 
       // toolStripSeparator5
       // 
       toolStripSeparator5.Name = "toolStripSeparator5";
-      toolStripSeparator5.Size = new Size(177, 6);
+      toolStripSeparator5.Size = new Size(143, 6);
       // 
       // exitToolStripMenuItem
       // 
       exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      exitToolStripMenuItem.Size = new Size(180, 22);
+      exitToolStripMenuItem.Size = new Size(146, 22);
       exitToolStripMenuItem.Text = "E&xit";
       exitToolStripMenuItem.Click += ExitToolsStripMenuItem_Click;
       // 
@@ -213,7 +215,7 @@ namespace MSNChat
       undoToolStripMenuItem.ImageTransparentColor = Color.Black;
       undoToolStripMenuItem.Name = "undoToolStripMenuItem";
       undoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
-      undoToolStripMenuItem.Size = new Size(180, 22);
+      undoToolStripMenuItem.Size = new Size(164, 22);
       undoToolStripMenuItem.Text = "&Undo";
       // 
       // redoToolStripMenuItem
@@ -223,13 +225,13 @@ namespace MSNChat
       redoToolStripMenuItem.ImageTransparentColor = Color.Black;
       redoToolStripMenuItem.Name = "redoToolStripMenuItem";
       redoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Y;
-      redoToolStripMenuItem.Size = new Size(180, 22);
+      redoToolStripMenuItem.Size = new Size(164, 22);
       redoToolStripMenuItem.Text = "&Redo";
       // 
       // toolStripSeparator6
       // 
       toolStripSeparator6.Name = "toolStripSeparator6";
-      toolStripSeparator6.Size = new Size(177, 6);
+      toolStripSeparator6.Size = new Size(161, 6);
       // 
       // cutToolStripMenuItem
       // 
@@ -238,7 +240,7 @@ namespace MSNChat
       cutToolStripMenuItem.ImageTransparentColor = Color.Black;
       cutToolStripMenuItem.Name = "cutToolStripMenuItem";
       cutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
-      cutToolStripMenuItem.Size = new Size(180, 22);
+      cutToolStripMenuItem.Size = new Size(164, 22);
       cutToolStripMenuItem.Text = "Cu&t";
       cutToolStripMenuItem.Click += CutToolStripMenuItem_Click;
       // 
@@ -249,7 +251,7 @@ namespace MSNChat
       copyToolStripMenuItem.ImageTransparentColor = Color.Black;
       copyToolStripMenuItem.Name = "copyToolStripMenuItem";
       copyToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
-      copyToolStripMenuItem.Size = new Size(180, 22);
+      copyToolStripMenuItem.Size = new Size(164, 22);
       copyToolStripMenuItem.Text = "&Copy";
       copyToolStripMenuItem.Click += CopyToolStripMenuItem_Click;
       // 
@@ -260,21 +262,21 @@ namespace MSNChat
       pasteToolStripMenuItem.ImageTransparentColor = Color.Black;
       pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
       pasteToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.V;
-      pasteToolStripMenuItem.Size = new Size(180, 22);
+      pasteToolStripMenuItem.Size = new Size(164, 22);
       pasteToolStripMenuItem.Text = "&Paste";
       pasteToolStripMenuItem.Click += PasteToolStripMenuItem_Click;
       // 
       // toolStripSeparator7
       // 
       toolStripSeparator7.Name = "toolStripSeparator7";
-      toolStripSeparator7.Size = new Size(177, 6);
+      toolStripSeparator7.Size = new Size(161, 6);
       // 
       // selectAllToolStripMenuItem
       // 
       selectAllToolStripMenuItem.Enabled = false;
       selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
       selectAllToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
-      selectAllToolStripMenuItem.Size = new Size(180, 22);
+      selectAllToolStripMenuItem.Size = new Size(164, 22);
       selectAllToolStripMenuItem.Text = "Select &All";
       // 
       // viewMenu
@@ -290,7 +292,7 @@ namespace MSNChat
       toolBarToolStripMenuItem.CheckOnClick = true;
       toolBarToolStripMenuItem.CheckState = CheckState.Checked;
       toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
-      toolBarToolStripMenuItem.Size = new Size(180, 22);
+      toolBarToolStripMenuItem.Size = new Size(156, 22);
       toolBarToolStripMenuItem.Text = "&Toolbar";
       toolBarToolStripMenuItem.Click += ToolBarToolStripMenuItem_Click;
       // 
@@ -300,7 +302,7 @@ namespace MSNChat
       statusBarToolStripMenuItem.CheckOnClick = true;
       statusBarToolStripMenuItem.CheckState = CheckState.Checked;
       statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-      statusBarToolStripMenuItem.Size = new Size(180, 22);
+      statusBarToolStripMenuItem.Size = new Size(156, 22);
       statusBarToolStripMenuItem.Text = "&Status Bar";
       statusBarToolStripMenuItem.Click += StatusBarToolStripMenuItem_Click;
       // 
@@ -310,21 +312,21 @@ namespace MSNChat
       treeBarToolStripMenuItem.CheckOnClick = true;
       treeBarToolStripMenuItem.CheckState = CheckState.Checked;
       treeBarToolStripMenuItem.Name = "treeBarToolStripMenuItem";
-      treeBarToolStripMenuItem.Size = new Size(180, 22);
+      treeBarToolStripMenuItem.Size = new Size(156, 22);
       treeBarToolStripMenuItem.Text = "Tr&eebar";
       treeBarToolStripMenuItem.Click += TreeBarToolStripMenuItem_Click;
       // 
       // toolStripMenuSeperator1
       // 
       toolStripMenuSeperator1.Name = "toolStripMenuSeperator1";
-      toolStripMenuSeperator1.Size = new Size(177, 6);
+      toolStripMenuSeperator1.Size = new Size(153, 6);
       // 
       // fullScreenToolStripMenuItem
       // 
       fullScreenToolStripMenuItem.Enabled = false;
       fullScreenToolStripMenuItem.Name = "fullScreenToolStripMenuItem";
       fullScreenToolStripMenuItem.ShortcutKeys = Keys.F11;
-      fullScreenToolStripMenuItem.Size = new Size(180, 22);
+      fullScreenToolStripMenuItem.Size = new Size(156, 22);
       fullScreenToolStripMenuItem.Text = "&Full Scr&een";
       // 
       // toolsMenu
@@ -338,7 +340,7 @@ namespace MSNChat
       // 
       optionsToolStripMenuItem.Enabled = false;
       optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-      optionsToolStripMenuItem.Size = new Size(180, 22);
+      optionsToolStripMenuItem.Size = new Size(116, 22);
       optionsToolStripMenuItem.Text = "&Options";
       // 
       // windowsMenu
@@ -403,7 +405,7 @@ namespace MSNChat
       contentsToolStripMenuItem.Enabled = false;
       contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
       contentsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
-      contentsToolStripMenuItem.Size = new Size(180, 22);
+      contentsToolStripMenuItem.Size = new Size(198, 22);
       contentsToolStripMenuItem.Text = "&Contents";
       // 
       // indexToolStripMenuItem
@@ -412,7 +414,7 @@ namespace MSNChat
       indexToolStripMenuItem.Image = (Image)resources.GetObject("indexToolStripMenuItem.Image");
       indexToolStripMenuItem.ImageTransparentColor = Color.Black;
       indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-      indexToolStripMenuItem.Size = new Size(180, 22);
+      indexToolStripMenuItem.Size = new Size(198, 22);
       indexToolStripMenuItem.Text = "&Index";
       // 
       // searchToolStripMenuItem
@@ -421,19 +423,19 @@ namespace MSNChat
       searchToolStripMenuItem.Image = (Image)resources.GetObject("searchToolStripMenuItem.Image");
       searchToolStripMenuItem.ImageTransparentColor = Color.Black;
       searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-      searchToolStripMenuItem.Size = new Size(180, 22);
+      searchToolStripMenuItem.Size = new Size(198, 22);
       searchToolStripMenuItem.Text = "&Search";
       // 
       // toolStripSeparator8
       // 
       toolStripSeparator8.Name = "toolStripSeparator8";
-      toolStripSeparator8.Size = new Size(177, 6);
+      toolStripSeparator8.Size = new Size(195, 6);
       // 
       // aboutToolStripMenuItem
       // 
       aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      aboutToolStripMenuItem.Size = new Size(180, 22);
-      aboutToolStripMenuItem.Text = "&About ... ...";
+      aboutToolStripMenuItem.Size = new Size(198, 22);
+      aboutToolStripMenuItem.Text = "&About MSN Chat Client";
       aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
       // 
       // toolStrip
@@ -441,7 +443,7 @@ namespace MSNChat
       toolStrip.Items.AddRange(new ToolStripItem[] { newToolStripButton, openToolStripButton, saveToolStripButton, toolStripSeparator1, printToolStripButton, printPreviewToolStripButton, toolStripSeparator2, helpToolStripButton });
       toolStrip.Location = new Point(0, 24);
       toolStrip.Name = "toolStrip";
-      toolStrip.Size = new Size(737, 25);
+      toolStrip.Size = new Size(838, 25);
       toolStrip.TabIndex = 1;
       toolStrip.Text = "ToolStrip";
       // 
@@ -520,10 +522,10 @@ namespace MSNChat
       // statusStrip
       // 
       statusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel });
-      statusStrip.Location = new Point(0, 501);
+      statusStrip.Location = new Point(0, 419);
       statusStrip.Name = "statusStrip";
       statusStrip.Padding = new Padding(1, 0, 16, 0);
-      statusStrip.Size = new Size(737, 22);
+      statusStrip.Size = new Size(838, 22);
       statusStrip.TabIndex = 2;
       statusStrip.Text = "StatusStrip";
       // 
@@ -538,14 +540,14 @@ namespace MSNChat
       treeView.Dock = DockStyle.Left;
       treeView.Location = new Point(0, 49);
       treeView.Name = "treeView";
-      treeView.Size = new Size(200, 452);
+      treeView.Size = new Size(200, 370);
       treeView.TabIndex = 4;
       // 
       // splitter1
       // 
       splitter1.Location = new Point(200, 49);
       splitter1.Name = "splitter1";
-      splitter1.Size = new Size(3, 452);
+      splitter1.Size = new Size(3, 370);
       splitter1.TabIndex = 6;
       splitter1.TabStop = false;
       // 
@@ -553,7 +555,7 @@ namespace MSNChat
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(737, 523);
+      ClientSize = new Size(838, 441);
       Controls.Add(splitter1);
       Controls.Add(treeView);
       Controls.Add(statusStrip);
@@ -563,7 +565,7 @@ namespace MSNChat
       MainMenuStrip = menuStrip;
       Margin = new Padding(4, 3, 4, 3);
       Name = "MDIChatClient";
-      Text = "MDIChatClient";
+      Text = "MSN Chat Client";
       menuStrip.ResumeLayout(false);
       menuStrip.PerformLayout();
       toolStrip.ResumeLayout(false);
