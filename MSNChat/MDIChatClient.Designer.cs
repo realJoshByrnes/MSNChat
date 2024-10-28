@@ -108,6 +108,7 @@
             // 
             // newToolStripMenuItem
             // 
+            newToolStripMenuItem.Enabled = false;
             newToolStripMenuItem.Image = (Image)resources.GetObject("newToolStripMenuItem.Image");
             newToolStripMenuItem.ImageTransparentColor = Color.Black;
             newToolStripMenuItem.Name = "newToolStripMenuItem";
@@ -118,6 +119,7 @@
             // 
             // openToolStripMenuItem
             // 
+            openToolStripMenuItem.Enabled = false;
             openToolStripMenuItem.Image = (Image)resources.GetObject("openToolStripMenuItem.Image");
             openToolStripMenuItem.ImageTransparentColor = Color.Black;
             openToolStripMenuItem.Name = "openToolStripMenuItem";
@@ -133,6 +135,7 @@
             // 
             // saveToolStripMenuItem
             // 
+            saveToolStripMenuItem.Enabled = false;
             saveToolStripMenuItem.Image = (Image)resources.GetObject("saveToolStripMenuItem.Image");
             saveToolStripMenuItem.ImageTransparentColor = Color.Black;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
@@ -142,6 +145,7 @@
             // 
             // saveAsToolStripMenuItem
             // 
+            saveAsToolStripMenuItem.Enabled = false;
             saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             saveAsToolStripMenuItem.Size = new Size(146, 22);
             saveAsToolStripMenuItem.Text = "Save &As";
@@ -154,6 +158,7 @@
             // 
             // printToolStripMenuItem
             // 
+            printToolStripMenuItem.Enabled = false;
             printToolStripMenuItem.Image = (Image)resources.GetObject("printToolStripMenuItem.Image");
             printToolStripMenuItem.ImageTransparentColor = Color.Black;
             printToolStripMenuItem.Name = "printToolStripMenuItem";
@@ -163,6 +168,7 @@
             // 
             // printPreviewToolStripMenuItem
             // 
+            printPreviewToolStripMenuItem.Enabled = false;
             printPreviewToolStripMenuItem.Image = (Image)resources.GetObject("printPreviewToolStripMenuItem.Image");
             printPreviewToolStripMenuItem.ImageTransparentColor = Color.Black;
             printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
@@ -171,6 +177,7 @@
             // 
             // printSetupToolStripMenuItem
             // 
+            printSetupToolStripMenuItem.Enabled = false;
             printSetupToolStripMenuItem.Name = "printSetupToolStripMenuItem";
             printSetupToolStripMenuItem.Size = new Size(146, 22);
             printSetupToolStripMenuItem.Text = "Print Setup";
@@ -196,6 +203,7 @@
             // 
             // undoToolStripMenuItem
             // 
+            undoToolStripMenuItem.Enabled = false;
             undoToolStripMenuItem.Image = (Image)resources.GetObject("undoToolStripMenuItem.Image");
             undoToolStripMenuItem.ImageTransparentColor = Color.Black;
             undoToolStripMenuItem.Name = "undoToolStripMenuItem";
@@ -205,6 +213,7 @@
             // 
             // redoToolStripMenuItem
             // 
+            redoToolStripMenuItem.Enabled = false;
             redoToolStripMenuItem.Image = (Image)resources.GetObject("redoToolStripMenuItem.Image");
             redoToolStripMenuItem.ImageTransparentColor = Color.Black;
             redoToolStripMenuItem.Name = "redoToolStripMenuItem";
@@ -219,6 +228,7 @@
             // 
             // cutToolStripMenuItem
             // 
+            cutToolStripMenuItem.Enabled = false;
             cutToolStripMenuItem.Image = (Image)resources.GetObject("cutToolStripMenuItem.Image");
             cutToolStripMenuItem.ImageTransparentColor = Color.Black;
             cutToolStripMenuItem.Name = "cutToolStripMenuItem";
@@ -229,6 +239,7 @@
             // 
             // copyToolStripMenuItem
             // 
+            copyToolStripMenuItem.Enabled = false;
             copyToolStripMenuItem.Image = (Image)resources.GetObject("copyToolStripMenuItem.Image");
             copyToolStripMenuItem.ImageTransparentColor = Color.Black;
             copyToolStripMenuItem.Name = "copyToolStripMenuItem";
@@ -239,6 +250,7 @@
             // 
             // pasteToolStripMenuItem
             // 
+            pasteToolStripMenuItem.Enabled = false;
             pasteToolStripMenuItem.Image = (Image)resources.GetObject("pasteToolStripMenuItem.Image");
             pasteToolStripMenuItem.ImageTransparentColor = Color.Black;
             pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
@@ -254,6 +266,7 @@
             // 
             // selectAllToolStripMenuItem
             // 
+            selectAllToolStripMenuItem.Enabled = false;
             selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
             selectAllToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
             selectAllToolStripMenuItem.Size = new Size(164, 22);
@@ -308,6 +321,7 @@
             // 
             // newWindowToolStripMenuItem
             // 
+            newWindowToolStripMenuItem.Enabled = false;
             newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
             newWindowToolStripMenuItem.Size = new Size(180, 22);
             newWindowToolStripMenuItem.Text = "&New Window";
@@ -357,36 +371,39 @@
             // 
             // contentsToolStripMenuItem
             // 
+            contentsToolStripMenuItem.Enabled = false;
             contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
             contentsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
-            contentsToolStripMenuItem.Size = new Size(180, 22);
+            contentsToolStripMenuItem.Size = new Size(168, 22);
             contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
             // 
+            indexToolStripMenuItem.Enabled = false;
             indexToolStripMenuItem.Image = (Image)resources.GetObject("indexToolStripMenuItem.Image");
             indexToolStripMenuItem.ImageTransparentColor = Color.Black;
             indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            indexToolStripMenuItem.Size = new Size(180, 22);
+            indexToolStripMenuItem.Size = new Size(168, 22);
             indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
+            searchToolStripMenuItem.Enabled = false;
             searchToolStripMenuItem.Image = (Image)resources.GetObject("searchToolStripMenuItem.Image");
             searchToolStripMenuItem.ImageTransparentColor = Color.Black;
             searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            searchToolStripMenuItem.Size = new Size(180, 22);
+            searchToolStripMenuItem.Size = new Size(168, 22);
             searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator8
             // 
             toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(177, 6);
+            toolStripSeparator8.Size = new Size(165, 6);
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(180, 22);
+            aboutToolStripMenuItem.Size = new Size(168, 22);
             aboutToolStripMenuItem.Text = "&About ... ...";
             aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
@@ -402,6 +419,7 @@
             // newToolStripButton
             // 
             newToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            newToolStripButton.Enabled = false;
             newToolStripButton.Image = (Image)resources.GetObject("newToolStripButton.Image");
             newToolStripButton.ImageTransparentColor = Color.Black;
             newToolStripButton.Name = "newToolStripButton";
@@ -412,6 +430,7 @@
             // openToolStripButton
             // 
             openToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            openToolStripButton.Enabled = false;
             openToolStripButton.Image = (Image)resources.GetObject("openToolStripButton.Image");
             openToolStripButton.ImageTransparentColor = Color.Black;
             openToolStripButton.Name = "openToolStripButton";
@@ -422,6 +441,7 @@
             // saveToolStripButton
             // 
             saveToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            saveToolStripButton.Enabled = false;
             saveToolStripButton.Image = (Image)resources.GetObject("saveToolStripButton.Image");
             saveToolStripButton.ImageTransparentColor = Color.Black;
             saveToolStripButton.Name = "saveToolStripButton";
@@ -436,6 +456,7 @@
             // printToolStripButton
             // 
             printToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            printToolStripButton.Enabled = false;
             printToolStripButton.Image = (Image)resources.GetObject("printToolStripButton.Image");
             printToolStripButton.ImageTransparentColor = Color.Black;
             printToolStripButton.Name = "printToolStripButton";
@@ -445,6 +466,7 @@
             // printPreviewToolStripButton
             // 
             printPreviewToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            printPreviewToolStripButton.Enabled = false;
             printPreviewToolStripButton.Image = (Image)resources.GetObject("printPreviewToolStripButton.Image");
             printPreviewToolStripButton.ImageTransparentColor = Color.Black;
             printPreviewToolStripButton.Name = "printPreviewToolStripButton";
@@ -459,6 +481,7 @@
             // helpToolStripButton
             // 
             helpToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            helpToolStripButton.Enabled = false;
             helpToolStripButton.Image = (Image)resources.GetObject("helpToolStripButton.Image");
             helpToolStripButton.ImageTransparentColor = Color.Black;
             helpToolStripButton.Name = "helpToolStripButton";
