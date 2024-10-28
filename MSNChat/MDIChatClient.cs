@@ -14,39 +14,53 @@ namespace MSNChat
   public partial class MDIChatClient : Form
   {
     private int childFormNumber = 0;
+    private Dictionary<Form, TreeNode> treeNodes = new();
 
     public MDIChatClient()
     {
       InitializeComponent();
+      // Handle the MdiChildActivate event to update the TreeView.
       this.MdiChildActivate += MDIChatClient_MdiChildActivate;
     }
 
-    // The following Dictionary and Method is purely for the TreeView.
-    private Dictionary<Form, TreeNode> treeNodes = new();
-
+    // This method updates the TreeView when a child form is activated or closed.
     private void MDIChatClient_MdiChildActivate(object? sender, EventArgs e)
     {
       if (this.ActiveMdiChild != null)
       {
-        if (treeNodes.TryGetValue(this.ActiveMdiChild, out TreeNode? value)) // Existing child form.
-        {
+        if (treeNodes.TryGetValue(this.ActiveMdiChild, out TreeNode? value))
+        { // Case: Existing Form Activated
+          // Select the TreeNode in the TreeView.
           treeView.SelectedNode = value;
         }
-        else // New child form.
-        {
+        else
+        { // Case: New Form Created
+          // Create a new TreeNode
           TreeNode rootNode = new TreeNode(this.ActiveMdiChild.Text);
+          // Associate the TreeNode with the child form.
+          rootNode.Tag = this.ActiveMdiChild;
+          // Add the TreeNode to the TreeView.
           treeView.Nodes.Add(rootNode);
+          // Select the TreeNode in the TreeView.
           treeView.SelectedNode = rootNode;
+
+          // Add the TreeNode to the Dictionary.
           treeNodes.Add(this.ActiveMdiChild, rootNode);
+          // Update the TreeNode when the child form's Text changes.
+          this.ActiveMdiChild.TextChanged += (s, e) => rootNode.Text = this.ActiveMdiChild.Text;
+          // Remove the TreeNode when the child form is closed.
           this.ActiveMdiChild.FormClosed += (s, e) =>
           {
+            // Remove the TreeNode from the TreeView.
             rootNode.Remove();
+            // Remove the TreeNode from the Dictionary.
             treeNodes.Remove(this.ActiveMdiChild);
           };
         }
       }
-      else // No active child form.
-      {
+      else
+      { // Case: No Form Activated
+        // Deselect the TreeNode in the TreeView.
         treeView.SelectedNode = null;
       }
     }
@@ -111,6 +125,7 @@ namespace MSNChat
     private void TreeBarToolStripMenuItem_Click(object sender, EventArgs e)
     {
       treeView.Visible = treeBarToolStripMenuItem.Checked;
+      splitter1.Visible = treeBarToolStripMenuItem.Checked;
     }
 
     private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,6 +160,12 @@ namespace MSNChat
     {
       AboutBox aboutBox = new AboutBox();
       aboutBox.ShowDialog();
+    }
+
+    private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
+    {
+      if (e.Node != null && e.Node.Tag is Form)
+        ((Form)e.Node.Tag).Focus();
     }
   }
 }
