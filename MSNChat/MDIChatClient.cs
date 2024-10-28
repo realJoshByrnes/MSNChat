@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,37 @@ namespace MSNChat
     public MDIChatClient()
     {
       InitializeComponent();
+      this.MdiChildActivate += MDIChatClient_MdiChildActivate;
+    }
+
+    // The following Dictionary and Method is purely for the TreeView.
+    private Dictionary<Form, TreeNode> treeNodes = new();
+
+    private void MDIChatClient_MdiChildActivate(object? sender, EventArgs e)
+    {
+      if (this.ActiveMdiChild != null)
+      {
+        if (treeNodes.TryGetValue(this.ActiveMdiChild, out TreeNode? value)) // Existing child form.
+        {
+          treeView.SelectedNode = value;
+        }
+        else // New child form.
+        {
+          TreeNode rootNode = new TreeNode(this.ActiveMdiChild.Text);
+          treeView.Nodes.Add(rootNode);
+          treeView.SelectedNode = rootNode;
+          treeNodes.Add(this.ActiveMdiChild, rootNode);
+          this.ActiveMdiChild.FormClosed += (s, e) =>
+          {
+            rootNode.Remove();
+            treeNodes.Remove(this.ActiveMdiChild);
+          };
+        }
+      }
+      else // No active child form.
+      {
+        treeView.SelectedNode = null;
+      }
     }
 
     private void ShowNewForm(object sender, EventArgs e)

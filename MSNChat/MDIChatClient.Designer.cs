@@ -115,12 +115,11 @@ namespace MSNChat
       // 
       // newToolStripMenuItem
       // 
-      newToolStripMenuItem.Enabled = false;
       newToolStripMenuItem.Image = (Image)resources.GetObject("newToolStripMenuItem.Image");
       newToolStripMenuItem.ImageTransparentColor = Color.Black;
       newToolStripMenuItem.Name = "newToolStripMenuItem";
       newToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
-      newToolStripMenuItem.Size = new Size(146, 22);
+      newToolStripMenuItem.Size = new Size(180, 22);
       newToolStripMenuItem.Text = "&New";
       newToolStripMenuItem.Click += ShowNewForm;
       // 
@@ -131,14 +130,14 @@ namespace MSNChat
       openToolStripMenuItem.ImageTransparentColor = Color.Black;
       openToolStripMenuItem.Name = "openToolStripMenuItem";
       openToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
-      openToolStripMenuItem.Size = new Size(146, 22);
+      openToolStripMenuItem.Size = new Size(180, 22);
       openToolStripMenuItem.Text = "&Open";
       openToolStripMenuItem.Click += OpenFile;
       // 
       // toolStripSeparator3
       // 
       toolStripSeparator3.Name = "toolStripSeparator3";
-      toolStripSeparator3.Size = new Size(143, 6);
+      toolStripSeparator3.Size = new Size(177, 6);
       // 
       // saveToolStripMenuItem
       // 
@@ -147,21 +146,21 @@ namespace MSNChat
       saveToolStripMenuItem.ImageTransparentColor = Color.Black;
       saveToolStripMenuItem.Name = "saveToolStripMenuItem";
       saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
-      saveToolStripMenuItem.Size = new Size(146, 22);
+      saveToolStripMenuItem.Size = new Size(180, 22);
       saveToolStripMenuItem.Text = "&Save";
       // 
       // saveAsToolStripMenuItem
       // 
       saveAsToolStripMenuItem.Enabled = false;
       saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-      saveAsToolStripMenuItem.Size = new Size(146, 22);
+      saveAsToolStripMenuItem.Size = new Size(180, 22);
       saveAsToolStripMenuItem.Text = "Save &As";
       saveAsToolStripMenuItem.Click += SaveAsToolStripMenuItem_Click;
       // 
       // toolStripSeparator4
       // 
       toolStripSeparator4.Name = "toolStripSeparator4";
-      toolStripSeparator4.Size = new Size(143, 6);
+      toolStripSeparator4.Size = new Size(177, 6);
       // 
       // printToolStripMenuItem
       // 
@@ -170,7 +169,7 @@ namespace MSNChat
       printToolStripMenuItem.ImageTransparentColor = Color.Black;
       printToolStripMenuItem.Name = "printToolStripMenuItem";
       printToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.P;
-      printToolStripMenuItem.Size = new Size(146, 22);
+      printToolStripMenuItem.Size = new Size(180, 22);
       printToolStripMenuItem.Text = "&Print";
       // 
       // printPreviewToolStripMenuItem
@@ -179,25 +178,25 @@ namespace MSNChat
       printPreviewToolStripMenuItem.Image = (Image)resources.GetObject("printPreviewToolStripMenuItem.Image");
       printPreviewToolStripMenuItem.ImageTransparentColor = Color.Black;
       printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-      printPreviewToolStripMenuItem.Size = new Size(146, 22);
+      printPreviewToolStripMenuItem.Size = new Size(180, 22);
       printPreviewToolStripMenuItem.Text = "Print Pre&view";
       // 
       // printSetupToolStripMenuItem
       // 
       printSetupToolStripMenuItem.Enabled = false;
       printSetupToolStripMenuItem.Name = "printSetupToolStripMenuItem";
-      printSetupToolStripMenuItem.Size = new Size(146, 22);
+      printSetupToolStripMenuItem.Size = new Size(180, 22);
       printSetupToolStripMenuItem.Text = "Print Setup";
       // 
       // toolStripSeparator5
       // 
       toolStripSeparator5.Name = "toolStripSeparator5";
-      toolStripSeparator5.Size = new Size(143, 6);
+      toolStripSeparator5.Size = new Size(177, 6);
       // 
       // exitToolStripMenuItem
       // 
       exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      exitToolStripMenuItem.Size = new Size(146, 22);
+      exitToolStripMenuItem.Size = new Size(180, 22);
       exitToolStripMenuItem.Text = "E&xit";
       exitToolStripMenuItem.Click += ExitToolsStripMenuItem_Click;
       // 
@@ -354,42 +353,42 @@ namespace MSNChat
       // 
       newWindowToolStripMenuItem.Enabled = false;
       newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-      newWindowToolStripMenuItem.Size = new Size(180, 22);
+      newWindowToolStripMenuItem.Size = new Size(151, 22);
       newWindowToolStripMenuItem.Text = "&New Window";
       newWindowToolStripMenuItem.Click += ShowNewForm;
       // 
       // cascadeToolStripMenuItem
       // 
       cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-      cascadeToolStripMenuItem.Size = new Size(180, 22);
+      cascadeToolStripMenuItem.Size = new Size(151, 22);
       cascadeToolStripMenuItem.Text = "&Cascade";
       cascadeToolStripMenuItem.Click += CascadeToolStripMenuItem_Click;
       // 
       // tileVerticalToolStripMenuItem
       // 
       tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-      tileVerticalToolStripMenuItem.Size = new Size(180, 22);
+      tileVerticalToolStripMenuItem.Size = new Size(151, 22);
       tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
       tileVerticalToolStripMenuItem.Click += TileVerticalToolStripMenuItem_Click;
       // 
       // tileHorizontalToolStripMenuItem
       // 
       tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-      tileHorizontalToolStripMenuItem.Size = new Size(180, 22);
+      tileHorizontalToolStripMenuItem.Size = new Size(151, 22);
       tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
       tileHorizontalToolStripMenuItem.Click += TileHorizontalToolStripMenuItem_Click;
       // 
       // closeAllToolStripMenuItem
       // 
       closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-      closeAllToolStripMenuItem.Size = new Size(180, 22);
+      closeAllToolStripMenuItem.Size = new Size(151, 22);
       closeAllToolStripMenuItem.Text = "C&lose All";
       closeAllToolStripMenuItem.Click += CloseAllToolStripMenuItem_Click;
       // 
       // arrangeIconsToolStripMenuItem
       // 
       arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-      arrangeIconsToolStripMenuItem.Size = new Size(180, 22);
+      arrangeIconsToolStripMenuItem.Size = new Size(151, 22);
       arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
       arrangeIconsToolStripMenuItem.Click += ArrangeIconsToolStripMenuItem_Click;
       // 
