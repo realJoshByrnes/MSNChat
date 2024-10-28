@@ -562,6 +562,7 @@ namespace MSNChat
       Controls.Add(statusStrip);
       Controls.Add(toolStrip);
       Controls.Add(menuStrip);
+      Icon = (Icon)resources.GetObject("$this.Icon");
       IsMdiContainer = true;
       MainMenuStrip = menuStrip;
       Margin = new Padding(4, 3, 4, 3);
@@ -631,11 +632,11 @@ namespace MSNChat
         private System.Windows.Forms.ToolStripButton printPreviewToolStripButton;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolTip toolTip;
-    private TreeView treeView;
     private Splitter splitter1;
     private ToolStripMenuItem fullScreenToolStripMenuItem;
     private ToolStripMenuItem treeBarToolStripMenuItem;
     private ToolStripSeparator toolStripMenuSeperator1;
+    private CustomTreeView treeView;
   }
 }
 
