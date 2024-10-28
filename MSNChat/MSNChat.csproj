@@ -29,6 +29,13 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.106">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="@REM Tools -&gt; Get tools and features -&gt; Individual Components -&gt; MSVC v143 - VS 2022 C++ x64/x86 build tools (latest)&#xD;&#xA;set VSCMD_BANNER_TEXT_ALT=Using VS Shell to set /NXCOMPAT:NO&#xD;&#xA;call &quot;$(DevEnvDir)..\..\VC\Auxiliary\Build\vcvars32.bat&quot;&#xD;&#xA;editbin.exe /NOLOGO /NXCOMPAT:NO &quot;$(TargetDir)$(TargetName).exe&quot;" />
   </Target>

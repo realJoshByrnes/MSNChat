@@ -1,0 +1,5 @@
+WM_SYSCOMMAND
+
+GetSystemMenu
+PostMessage
+TrackPopupMenu

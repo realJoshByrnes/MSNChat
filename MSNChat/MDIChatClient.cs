@@ -1,13 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace MSNChat
 {
@@ -162,10 +153,14 @@ namespace MSNChat
       aboutBox.ShowDialog();
     }
 
-    private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
+    private void TreeView_AfterSelect(object sender, TreeViewEventArgs e)
     {
       if (e.Node != null && e.Node.Tag is Form)
-        ((Form)e.Node.Tag).Focus();
+      {
+        Form selectedForm = (Form)e.Node.Tag;
+        if (!selectedForm.Focused)
+          selectedForm.Focus();
+      }
     }
   }
 }

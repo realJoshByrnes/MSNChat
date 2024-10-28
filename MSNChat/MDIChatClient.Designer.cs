@@ -542,7 +542,7 @@ namespace MSNChat
       treeView.Name = "treeView";
       treeView.Size = new Size(200, 370);
       treeView.TabIndex = 4;
-      treeView.AfterSelect += treeView_AfterSelect;
+      treeView.AfterSelect += TreeView_AfterSelect;
       // 
       // splitter1
       // 
