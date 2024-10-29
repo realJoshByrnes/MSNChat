@@ -26,26 +26,28 @@ namespace MSNChat
         }
         else
         { // Case: New Form Created
-          // Create a new TreeNode
-          TreeNode rootNode = new TreeNode(this.ActiveMdiChild.Text);
+          // Keep track of the active form.
+          Form activeForm = this.ActiveMdiChild;
+
+          // Create a new TreeNode.
+          TreeNode rootNode = new TreeNode(activeForm.Text);
           // Associate the TreeNode with the child form.
-          rootNode.Tag = this.ActiveMdiChild;
+          rootNode.Tag = activeForm;
           // Add the TreeNode to the TreeView.
           treeView.Nodes.Add(rootNode);
           // Select the TreeNode in the TreeView.
           treeView.SelectedNode = rootNode;
-
           // Add the TreeNode to the Dictionary.
-          treeNodes.Add(this.ActiveMdiChild, rootNode);
+          treeNodes.Add(activeForm, rootNode);
           // Update the TreeNode when the child form's Text changes.
-          this.ActiveMdiChild.TextChanged += (s, e) => rootNode.Text = this.ActiveMdiChild.Text;
+          activeForm.TextChanged += (s, e) => rootNode.Text = this.ActiveMdiChild.Text;
           // Remove the TreeNode when the child form is closed.
-          this.ActiveMdiChild.FormClosed += (s, e) =>
+          activeForm.FormClosed += (s, e) =>
           {
+            // Remove the TreeNode from the Dictionary.
+            treeNodes.Remove(activeForm);
             // Remove the TreeNode from the TreeView.
             rootNode.Remove();
-            // Remove the TreeNode from the Dictionary.
-            treeNodes.Remove(this.ActiveMdiChild);
           };
         }
       }
