@@ -1,8 +1,6 @@
 using System.ComponentModel.Design;
 using System.ComponentModel;
 using MSNChat45;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace MSNChatControl
@@ -11,9 +9,10 @@ namespace MSNChatControl
     public partial class ChatFrame : UserControl
     {
         private bool interfacesAttached = false;
-        private AxMSNChatFrame? chatFrame;
+        private AxMSNChatFrame chatFrame = new AxMSNChatFrame();
 
-        public nint OcxHandle { get; private set; }
+        public bool isOcxHandleCreated => chatFrame.IsHandleCreated;
+        public IntPtr OcxHandle => (chatFrame.IsHandleCreated) ? chatFrame.Handle : IntPtr.Zero;
 
         public ChatFrame()
         {
@@ -995,12 +994,10 @@ namespace MSNChatControl
             {
                 if (interfacesAttached)
                 {
-                    Debug.WriteLine("Set external auditmessage");
                     chatFrame!.AuditMessage = value;
                 }
                 else
                 {
-                    Debug.WriteLine("Set internal auditmessage");
                     this.auditMessage = value;
                 }
             }
@@ -1067,13 +1064,6 @@ namespace MSNChatControl
             // The 32-bit ActiveX control won't work in the designer, so we have to create it ONLY at runtime.
             if (!this.DesignMode)
             {
-                chatFrame = new AxMSNChatFrame();
-                Debug.WriteLine("Created chatFrame");
-
-                EventHandler setOcxHandle = (object? s, EventArgs e) => this.OcxHandle = chatFrame.Handle;
-                chatFrame.HandleCreated += setOcxHandle;
-                chatFrame.HandleDestroyed += setOcxHandle;
-
                 chatFrame.OcxCreated += (s, e) =>
                 {
                     //chatFrame.BackColor = this.BackColor; // TODO: This causes an exception.
@@ -1134,5 +1124,17 @@ namespace MSNChatControl
                 }
             }
         }
-    }
+
+        public event EventHandler? OcxHandleCreated
+        {
+          add => chatFrame!.HandleCreated += value;
+          remove => chatFrame!.HandleCreated -= value;
+        }
+
+        public event EventHandler? OcxHandleDestroyed
+        {
+          add => chatFrame!.HandleDestroyed += value;
+          remove => chatFrame!.HandleDestroyed -= value;
+        }
+  }
 }
