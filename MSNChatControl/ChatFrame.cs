@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.Design;
+using System.ComponentModel.Design;
 using System.ComponentModel;
 using MSNChat45;
 using System.Diagnostics;
@@ -12,6 +12,8 @@ namespace MSNChatControl
     {
         private bool interfacesAttached = false;
         private AxMSNChatFrame? chatFrame;
+
+        public nint OcxHandle { get; private set; }
 
         public ChatFrame()
         {
@@ -1066,6 +1068,12 @@ namespace MSNChatControl
             if (!this.DesignMode)
             {
                 chatFrame = new AxMSNChatFrame();
+                Debug.WriteLine("Created chatFrame");
+
+                EventHandler setOcxHandle = (object? s, EventArgs e) => this.OcxHandle = chatFrame.Handle;
+                chatFrame.HandleCreated += setOcxHandle;
+                chatFrame.HandleDestroyed += setOcxHandle;
+
                 chatFrame.OcxCreated += (s, e) =>
                 {
                     //chatFrame.BackColor = this.BackColor; // TODO: This causes an exception.
