@@ -101,7 +101,7 @@ namespace MSNChat
       menuStrip.MdiWindowListItem = windowsMenu;
       menuStrip.Name = "menuStrip";
       menuStrip.Padding = new Padding(7, 2, 0, 2);
-      menuStrip.Size = new Size(838, 24);
+      menuStrip.Size = new Size(1584, 24);
       menuStrip.TabIndex = 0;
       menuStrip.Text = "MenuStrip";
       // 
@@ -442,7 +442,7 @@ namespace MSNChat
       toolStrip.Items.AddRange(new ToolStripItem[] { newToolStripButton, openToolStripButton, saveToolStripButton, toolStripSeparator1, printToolStripButton, printPreviewToolStripButton, toolStripSeparator2, helpToolStripButton });
       toolStrip.Location = new Point(0, 24);
       toolStrip.Name = "toolStrip";
-      toolStrip.Size = new Size(838, 25);
+      toolStrip.Size = new Size(1584, 25);
       toolStrip.TabIndex = 1;
       toolStrip.Text = "ToolStrip";
       // 
@@ -521,10 +521,10 @@ namespace MSNChat
       // statusStrip
       // 
       statusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel });
-      statusStrip.Location = new Point(0, 419);
+      statusStrip.Location = new Point(0, 839);
       statusStrip.Name = "statusStrip";
       statusStrip.Padding = new Padding(1, 0, 16, 0);
-      statusStrip.Size = new Size(838, 22);
+      statusStrip.Size = new Size(1584, 22);
       statusStrip.TabIndex = 2;
       statusStrip.Text = "StatusStrip";
       // 
@@ -537,17 +537,18 @@ namespace MSNChat
       // treeView
       // 
       treeView.Dock = DockStyle.Left;
+      treeView.DrawMode = TreeViewDrawMode.OwnerDrawText;
       treeView.HideSelection = false;
       treeView.Location = new Point(0, 49);
       treeView.Name = "treeView";
-      treeView.Size = new Size(200, 370);
+      treeView.Size = new Size(200, 790);
       treeView.TabIndex = 4;
       // 
       // splitter1
       // 
       splitter1.Location = new Point(200, 49);
       splitter1.Name = "splitter1";
-      splitter1.Size = new Size(3, 370);
+      splitter1.Size = new Size(3, 790);
       splitter1.TabIndex = 6;
       splitter1.TabStop = false;
       // 
@@ -555,7 +556,7 @@ namespace MSNChat
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(838, 441);
+      ClientSize = new Size(1584, 861);
       Controls.Add(splitter1);
       Controls.Add(treeView);
       Controls.Add(statusStrip);

@@ -60,7 +60,7 @@ namespace MSNChat
 
     private void ShowNewForm(object sender, EventArgs e)
     {
-      Form childForm = new Form();
+      Form childForm = new ChatRoom();
       childForm.MdiParent = this;
       childForm.Text = "Window " + childFormNumber++;
       childForm.Show();
