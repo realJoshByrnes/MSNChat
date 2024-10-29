@@ -154,15 +154,5 @@ namespace MSNChat
       AboutBox aboutBox = new AboutBox();
       aboutBox.ShowDialog();
     }
-
-    private void TreeView_AfterSelect(object sender, TreeViewEventArgs e)
-    {
-      if (e.Node != null && e.Node.Tag is Form)
-      {
-        Form selectedForm = (Form)e.Node.Tag;
-        if (!selectedForm.Focused)
-          selectedForm.Focus();
-      }
-    }
   }
 }

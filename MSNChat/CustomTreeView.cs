@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Configuration;
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.WindowsAndMessaging;
@@ -9,6 +10,10 @@ namespace MSNChat
    * CustomTreeView is a custom TreeView control that draws the selected node with the system highlight color and text color
    * when the TreeView does not have focus. This is necessary because the default TreeView control does not draw the selected
    * node well when the TreeView does not have focus, which can make it difficult for users to see which node is selected.
+   * 
+   * For simplicity sake, we move a few event handlers from MDIChatClient to this class. This way, the MDIChatClient class
+   * is less cluttered and easier to read. The MDIChatClient class can now focus on managing the MDI child forms and the
+   * TreeView control, while the CustomTreeView class can focus on drawing the TreeView nodes and handling the context menu.
    */
   internal class CustomTreeView : TreeView
   {
@@ -24,6 +29,19 @@ namespace MSNChat
       ContextMenuStrip cmStrip = new ContextMenuStrip();
       cmStrip.Opening += ContextMenu_Opening;
       this.ContextMenuStrip = cmStrip;
+
+      // Show form after select
+      this.AfterSelect += CustomTreeView_AfterSelect;
+    }
+
+    private void CustomTreeView_AfterSelect(object? sender, TreeViewEventArgs e)
+    {
+      if (e.Node != null && e.Node.Tag is Form)
+      {
+        Form selectedForm = (Form)e.Node.Tag;
+        if (!selectedForm.Focused)
+          selectedForm.Focus();
+      }
     }
 
     private void ContextMenu_Opening(object? sender, CancelEventArgs e)
