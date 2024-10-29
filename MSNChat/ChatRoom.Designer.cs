@@ -1,4 +1,4 @@
-﻿namespace MSNChat
+namespace MSNChat
 {
   partial class ChatRoom
   {
@@ -28,32 +28,31 @@
     /// </summary>
     private void InitializeComponent()
     {
-      chatFrame = new ChatFrame();
+      chatFrame1 = new MSNChatControl.ChatFrame();
       SuspendLayout();
       // 
-      // chatFrame
+      // chatFrame1
       // 
-      chatFrame.Dock = DockStyle.Fill;
-      chatFrame.Feature = 0U;
-      chatFrame.Location = new Point(0, 0);
-      chatFrame.Name = "chatFrame";
-      chatFrame.NickName = "JD";
-      chatFrame.Size = new Size(800, 450);
-      chatFrame.TabIndex = 0;
+      chatFrame1.Dock = DockStyle.Fill;
+      chatFrame1.Feature = 0U;
+      chatFrame1.Location = new Point(0, 0);
+      chatFrame1.Name = "chatFrame1";
+      chatFrame1.NickName = "X6681";
+      chatFrame1.Size = new Size(800, 450);
+      chatFrame1.TabIndex = 0;
       // 
       // ChatRoom
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(800, 450);
-      Controls.Add(chatFrame);
+      Controls.Add(chatFrame1);
       Name = "ChatRoom";
       Text = "ChatRoom";
       ResumeLayout(false);
     }
-
     #endregion
 
-    private ChatFrame chatFrame;
+    private MSNChatControl.ChatFrame chatFrame1;
   }
 }

@@ -1,3 +1,4 @@
+using MSNChatControl;
 using System.Diagnostics;
 
 namespace MSNChat
