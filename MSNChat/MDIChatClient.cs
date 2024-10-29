@@ -154,5 +154,19 @@ namespace MSNChat
       AboutBox aboutBox = new AboutBox();
       aboutBox.ShowDialog();
     }
+
+    private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      Form form = new Form();
+      var cs = new ChatSettings();
+      cs.Dock = DockStyle.Fill;
+      form.Controls.Add(cs);
+      form.Text = "Chat Settings";
+      form.ClientSize = new Size(420, 630);
+      form.FormBorderStyle = FormBorderStyle.Fixed3D;
+      form.MinimizeBox = false;
+      form.MaximizeBox = false;
+      form.ShowDialog();
+    }
   }
 }
