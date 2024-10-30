@@ -1,5 +1,15 @@
+WM_CREATE
 WM_SYSCOMMAND
 
+CWPRETSTRUCT
+
+CallNextHookEx
+FindWindowEx
+GetClassName
 GetSystemMenu
+GetWindowText
+GetWindowThreadProcessId
+GetWindowTextLength
 PostMessage
+SetWindowsHookEx
 TrackPopupMenu
