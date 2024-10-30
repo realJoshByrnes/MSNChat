@@ -1,7 +1,20 @@
+// Consts
+
+WA_ACTIVE
+WA_CLICKACTIVE
+WA_INACTIVE
+
+WM_ACTIVATE
 WM_CREATE
+WM_DESTROY
+WM_SETTEXT
 WM_SYSCOMMAND
 
+// Structs
+
 CWPRETSTRUCT
+
+// Methods
 
 CallNextHookEx
 FindWindowEx
@@ -11,5 +24,6 @@ GetWindowText
 GetWindowThreadProcessId
 GetWindowTextLength
 PostMessage
+SetForegroundWindow
 SetWindowsHookEx
 TrackPopupMenu

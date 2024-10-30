@@ -29,7 +29,6 @@ namespace MSNChat
     private void InitializeComponent()
     {
       chatFrame1 = new MSNChatControl.ChatFrame();
-      chatFrame1.SuspendLayout();
       SuspendLayout();
       // 
       // chatFrame1
@@ -41,6 +40,7 @@ namespace MSNChat
       chatFrame1.NickName = "X6681";
       chatFrame1.Size = new Size(800, 450);
       chatFrame1.TabIndex = 0;
+      chatFrame1.WhisperContent = "http://g.msn.com/5chenus/31";
       // 
       // ChatRoom
       // 
@@ -50,7 +50,6 @@ namespace MSNChat
       Controls.Add(chatFrame1);
       Name = "ChatRoom";
       Text = "ChatRoom";
-      chatFrame1.ResumeLayout(false);
       ResumeLayout(false);
     }
     #endregion

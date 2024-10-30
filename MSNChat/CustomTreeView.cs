@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Configuration;
+using System.Diagnostics;
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.WindowsAndMessaging;
@@ -36,11 +37,19 @@ namespace MSNChat
 
     private void CustomTreeView_AfterSelect(object? sender, TreeViewEventArgs e)
     {
-      if (e.Node != null && e.Node.Tag is Form)
+      if (e.Node == null)
+      {
+        return;
+      }
+      if (e.Node.Tag is Form)
       {
         Form selectedForm = (Form)e.Node.Tag;
         if (!selectedForm.Focused)
           selectedForm.Focus();
+      }
+      else if (e.Node.Tag != null)
+      {
+        PInvoke.SetForegroundWindow(new HWND((IntPtr)e.Node.Tag));
       }
     }
 
@@ -52,21 +61,32 @@ namespace MSNChat
       if (this.SelectedNode == null)
         return;
 
-      // Show the Form's system menu at the mouse position
-      if (this.SelectedNode?.Tag is Form selectedForm)
+      TreeNode node = this.SelectedNode;
+
+      HWND hWnd = (HWND)IntPtr.Zero;
+
+      if (node.Tag is Form selectedForm)
       {
-        HWND hWnd = (HWND)selectedForm.Handle;
-        HMENU hMenu = PInvoke.GetSystemMenu(hWnd, false);
-        TRACK_POPUP_MENU_FLAGS uFlags = TRACK_POPUP_MENU_FLAGS.TPM_LEFTALIGN |
-                                        TRACK_POPUP_MENU_FLAGS.TPM_TOPALIGN |
-                                        TRACK_POPUP_MENU_FLAGS.TPM_RETURNCMD |
-                                        TRACK_POPUP_MENU_FLAGS.TPM_RIGHTBUTTON;
-        unsafe
-        {
-          // Unsafed needed as there is an optional pointer parameter in TrackPopupMenu (prcRect), which is ignored.
-          int wParam = PInvoke.TrackPopupMenu(hMenu, uFlags, Control.MousePosition.X, Control.MousePosition.Y, 0, hWnd);
-          PInvoke.PostMessage(hWnd, PInvoke.WM_SYSCOMMAND, (uint)wParam, 0);
-        }
+        // Form
+        hWnd = (HWND)selectedForm.Handle;
+      }
+      else
+      {
+        // hWnd
+        hWnd = new HWND((IntPtr)node.Tag);
+      }
+      Debug.WriteLine("System Menu for {0:X}", hWnd.Value);
+
+      HMENU hMenu = PInvoke.GetSystemMenu(hWnd, false);
+      TRACK_POPUP_MENU_FLAGS uFlags = TRACK_POPUP_MENU_FLAGS.TPM_LEFTALIGN |
+                                      TRACK_POPUP_MENU_FLAGS.TPM_TOPALIGN |
+                                      TRACK_POPUP_MENU_FLAGS.TPM_RETURNCMD |
+                                      TRACK_POPUP_MENU_FLAGS.TPM_RIGHTBUTTON;
+      unsafe
+      {
+        // Unsafed needed as there is an optional pointer parameter in TrackPopupMenu (prcRect), which is ignored.
+        int wParam = PInvoke.TrackPopupMenu(hMenu, uFlags, Control.MousePosition.X, Control.MousePosition.Y, 0, hWnd);
+        PInvoke.PostMessage(hWnd, PInvoke.WM_SYSCOMMAND, (uint)wParam, 0);
       }
     }
 

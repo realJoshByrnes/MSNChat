@@ -6,62 +6,16 @@ namespace MSNChat
   public partial class MDIChatClient : Form
   {
     private int childFormNumber = 0;
-    private Dictionary<Form, TreeNode> treeNodes = new();
 
     public MDIChatClient()
     {
       InitializeComponent();
-      // Handle the MdiChildActivate event to update the TreeView.
-      this.MdiChildActivate += MDIChatClient_MdiChildActivate;
-    }
-
-    // This method updates the TreeView when a child form is activated or closed.
-    private void MDIChatClient_MdiChildActivate(object? sender, EventArgs e)
-    {
-      if (this.ActiveMdiChild != null)
-      {
-        if (treeNodes.TryGetValue(this.ActiveMdiChild, out TreeNode? value))
-        { // Case: Existing Form Activated
-          // Select the TreeNode in the TreeView.
-          treeView.SelectedNode = value;
-        }
-        else
-        { // Case: New Form Created
-          // Keep track of the active form.
-          Form activeForm = this.ActiveMdiChild;
-
-          // Create a new TreeNode.
-          TreeNode rootNode = new TreeNode(activeForm.Text);
-          // Associate the TreeNode with the child form.
-          rootNode.Tag = activeForm;
-          // Add the TreeNode to the TreeView.
-          treeView.Nodes.Add(rootNode);
-          // Select the TreeNode in the TreeView.
-          treeView.SelectedNode = rootNode;
-          // Add the TreeNode to the Dictionary.
-          treeNodes.Add(activeForm, rootNode);
-          // Update the TreeNode when the child form's Text changes.
-          activeForm.TextChanged += (s, e) => rootNode.Text = this.ActiveMdiChild.Text;
-          // Remove the TreeNode when the child form is closed.
-          activeForm.FormClosed += (s, e) =>
-          {
-            // Remove the TreeNode from the Dictionary.
-            treeNodes.Remove(activeForm);
-            // Remove the TreeNode from the TreeView.
-            rootNode.Remove();
-          };
-        }
-      }
-      else
-      { // Case: No Form Activated
-        // Deselect the TreeNode in the TreeView.
-        treeView.SelectedNode = null;
-      }
+      this.Activated += (s, e) => { if (ActiveMdiChild is ChatRoom) treeView.SelectedNode = ((ChatRoom)ActiveMdiChild).rootTreeNode; };
     }
 
     private void ShowNewForm(object sender, EventArgs e)
     {
-      Form childForm = new ChatRoom();
+      Form childForm = new ChatRoom(treeView);
       childForm.MdiParent = this;
       childForm.Text = "Window " + childFormNumber++;
       childForm.Show();
