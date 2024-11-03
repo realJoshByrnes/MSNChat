@@ -18,7 +18,7 @@ namespace AxMSNChat {
         
         [System.ComponentModel.Browsable(true)]
         [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        [System.Runtime.InteropServices.DispIdAttribute(-501)]
+        [System.Runtime.InteropServices.DispIdAttribute(1)]
         [System.Runtime.InteropServices.ComAliasNameAttribute("System.UInt32")]
         public override System.Drawing.Color BackColor {
             get {
@@ -684,7 +684,7 @@ namespace AxMSNChat {
 
         [System.ComponentModel.Browsable(true)]
         [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        [System.Runtime.InteropServices.DispIdAttribute(-501)]
+        [System.Runtime.InteropServices.DispIdAttribute(1)]
         [System.Runtime.InteropServices.ComAliasNameAttribute("System.UInt32")]
         public override System.Drawing.Color BackColor {
             get {
