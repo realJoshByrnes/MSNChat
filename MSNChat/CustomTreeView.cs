@@ -11,7 +11,7 @@ namespace MSNChat
    * CustomTreeView is a custom TreeView control that draws the selected node with the system highlight color and text color
    * when the TreeView does not have focus. This is necessary because the default TreeView control does not draw the selected
    * node well when the TreeView does not have focus, which can make it difficult for users to see which node is selected.
-   * 
+   *
    * For simplicity sake, we move a few event handlers from MDIChatClient to this class. This way, the MDIChatClient class
    * is less cluttered and easier to read. The MDIChatClient class can now focus on managing the MDI child forms and the
    * TreeView control, while the CustomTreeView class can focus on drawing the TreeView nodes and handling the context menu.
@@ -78,14 +78,22 @@ namespace MSNChat
       Debug.WriteLine("System Menu for {0:X}", hWnd.Value);
 
       HMENU hMenu = PInvoke.GetSystemMenu(hWnd, false);
-      TRACK_POPUP_MENU_FLAGS uFlags = TRACK_POPUP_MENU_FLAGS.TPM_LEFTALIGN |
-                                      TRACK_POPUP_MENU_FLAGS.TPM_TOPALIGN |
-                                      TRACK_POPUP_MENU_FLAGS.TPM_RETURNCMD |
-                                      TRACK_POPUP_MENU_FLAGS.TPM_RIGHTBUTTON;
+      TRACK_POPUP_MENU_FLAGS uFlags =
+        TRACK_POPUP_MENU_FLAGS.TPM_LEFTALIGN
+        | TRACK_POPUP_MENU_FLAGS.TPM_TOPALIGN
+        | TRACK_POPUP_MENU_FLAGS.TPM_RETURNCMD
+        | TRACK_POPUP_MENU_FLAGS.TPM_RIGHTBUTTON;
       unsafe
       {
         // Unsafed needed as there is an optional pointer parameter in TrackPopupMenu (prcRect), which is ignored.
-        int wParam = PInvoke.TrackPopupMenu(hMenu, uFlags, Control.MousePosition.X, Control.MousePosition.Y, 0, hWnd);
+        int wParam = PInvoke.TrackPopupMenu(
+          hMenu,
+          uFlags,
+          Control.MousePosition.X,
+          Control.MousePosition.Y,
+          0,
+          hWnd
+        );
         PInvoke.PostMessage(hWnd, PInvoke.WM_SYSCOMMAND, (uint)wParam, 0);
       }
     }
@@ -96,7 +104,14 @@ namespace MSNChat
       { // Case: Node selected but TreeView not focused
         // Draw the selected node with the system highlight color and text color.
         e.Graphics.FillRectangle(SystemBrushes.Highlight, e.Bounds);
-        TextRenderer.DrawText(e.Graphics, e.Node.Text, this.Font, e.Bounds, SystemColors.HighlightText, TextFormatFlags.GlyphOverhangPadding);
+        TextRenderer.DrawText(
+          e.Graphics,
+          e.Node.Text,
+          this.Font,
+          e.Bounds,
+          SystemColors.HighlightText,
+          TextFormatFlags.GlyphOverhangPadding
+        );
         e.DrawDefault = false;
       }
       else

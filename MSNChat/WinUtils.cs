@@ -33,15 +33,16 @@ namespace MSNChat
       string windowText = "";
       int stringLen = PInvoke.GetWindowTextLength(hWnd);
       if (stringLen != 0)
-      unsafe {
-        IntPtr stringMem = Marshal.AllocHGlobal((stringLen + 1) * sizeof(char));
-        PWSTR lpString = new PWSTR((char*)stringMem);
-        if (PInvoke.GetWindowText(hWnd, lpString, stringLen + 1) != 0)
+        unsafe
         {
-          windowText = lpString.ToString();
+          IntPtr stringMem = Marshal.AllocHGlobal((stringLen + 1) * sizeof(char));
+          PWSTR lpString = new PWSTR((char*)stringMem);
+          if (PInvoke.GetWindowText(hWnd, lpString, stringLen + 1) != 0)
+          {
+            windowText = lpString.ToString();
+          }
+          Marshal.FreeHGlobal(stringMem);
         }
-        Marshal.FreeHGlobal(stringMem);
-      }
       return windowText;
     }
 

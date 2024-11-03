@@ -1,6 +1,6 @@
-using AxMSNChat;
 using System.ComponentModel;
 using System.Diagnostics;
+using AxMSNChat;
 
 namespace MSNChatControlLibrary
 {
@@ -18,9 +18,9 @@ namespace MSNChatControlLibrary
     private void InitializeComponent()
     {
       SuspendLayout();
-      // 
+      //
       // MSNChatControl
-      // 
+      //
       Name = "MSNChatControl";
       Load += MSNChatControl_Load;
 
@@ -48,7 +48,8 @@ namespace MSNChatControlLibrary
       PassportTicket = "";
       PassportProfile = "";
       Feature = 0;
-      MessageOfTheDay = "Welcome to MSN Chat! MSN does not control or endorse the content, messages or information found in chat. MSN specifically disclaims any liability with regard to these areas. To review the MSN Chat guidelines, go to http://groups.msn.com/conduct NOTICE: To help protect you from spam, MSN Chat is now available by subscription only. Learn more at http://getchat.msn.com";
+      MessageOfTheDay =
+        "Welcome to MSN Chat! MSN does not control or endorse the content, messages or information found in chat. MSN specifically disclaims any liability with regard to these areas. To review the MSN Chat guidelines, go to http://groups.msn.com/conduct NOTICE: To help protect you from spam, MSN Chat is now available by subscription only. Learn more at http://getchat.msn.com";
       ChannelLanguage = "";
       InvitationCode = "";
       NicknameToInvite = "";
@@ -58,7 +59,8 @@ namespace MSNChatControlLibrary
       Market = "en-us";
       WhisperContent = "http://chat.msn.com/whisper.msnw";
       UserRole = "";
-      AuditMessage = "Note: MSN has detected that you are connected to this chat session from the IP address <B>%1</B>.";
+      AuditMessage =
+        "Note: MSN has detected that you are connected to this chat session from the IP address <B>%1</B>.";
       SubscriberInfo = "";
       UpsellURL = "";
 
@@ -98,17 +100,18 @@ namespace MSNChatControlLibrary
 
     private void MSNChatControl_Load(object sender, EventArgs e)
     {
-      if (DesignMode) {
-          // The MSN Chat Control / Chat Settings will not load in the designer due to /NXCOMPAT:NO needing to be set.
-          var lbl = new Label();
-          lbl.BackColor = this.BackColor;
-          lbl.Dock = DockStyle.Fill;
-          lbl.ForeColor = this.ForeColor;
-          lbl.Font = new Font(Font.Name, 20F, Font.Style, Font.Unit, Font.GdiCharSet);
-          lbl.Text = Name;
-          lbl.TextAlign = ContentAlignment.MiddleCenter;
-          Controls.Add(lbl);
-          return;
+      if (DesignMode)
+      {
+        // The MSN Chat Control / Chat Settings will not load in the designer due to /NXCOMPAT:NO needing to be set.
+        var lbl = new Label();
+        lbl.BackColor = this.BackColor;
+        lbl.Dock = DockStyle.Fill;
+        lbl.ForeColor = this.ForeColor;
+        lbl.Font = new Font(Font.Name, 20F, Font.Style, Font.Unit, Font.GdiCharSet);
+        lbl.Text = Name;
+        lbl.TextAlign = ContentAlignment.MiddleCenter;
+        Controls.Add(lbl);
+        return;
       }
       // Initialize AxMSNChatFrame
       axMSNChatFrame = new AxMSNChatFrame();
@@ -120,7 +123,7 @@ namespace MSNChatControlLibrary
     private T GetPropertyValue<T>(string propertyName)
     {
       if (interfacesAttached)
-    {
+      {
         var propertyInfo = typeof(AxMSNChatFrame).GetProperty(propertyName);
         if (propertyInfo != null)
         {
@@ -153,7 +156,7 @@ namespace MSNChatControlLibrary
       set { SetPropertyValue(nameof(RoomName), value); }
     }
 
-    [DefaultValue("")] 
+    [DefaultValue("")]
     public string HexRoomName
     {
       get { return GetPropertyValue<string>(nameof(HexRoomName)); }
@@ -177,225 +180,229 @@ namespace MSNChatControlLibrary
     [DefaultValue(typeof(Color), "255, 239, 239, 247")]
     public Color BackHighlightColor
     {
-        get { return GetPropertyValue<Color>(nameof(BackHighlightColor)); }
-        set { SetPropertyValue(nameof(BackHighlightColor), value); }
+      get { return GetPropertyValue<Color>(nameof(BackHighlightColor)); }
+      set { SetPropertyValue(nameof(BackHighlightColor), value); }
     }
 
     [DefaultValue(typeof(Color), "255, 102, 153, 255")]
     public Color ButtonFrameColor
     {
-        get { return GetPropertyValue<Color>(nameof(ButtonFrameColor)); }
-        set { SetPropertyValue(nameof(ButtonFrameColor), value); }
+      get { return GetPropertyValue<Color>(nameof(ButtonFrameColor)); }
+      set { SetPropertyValue(nameof(ButtonFrameColor), value); }
     }
 
     [DefaultValue(typeof(Color), "255, 165, 178, 206")]
     public Color TopBackHighlightColor
     {
-        get { return GetPropertyValue<Color>(nameof(TopBackHighlightColor)); }
-        set { SetPropertyValue(nameof(TopBackHighlightColor), value); }
+      get { return GetPropertyValue<Color>(nameof(TopBackHighlightColor)); }
+      set { SetPropertyValue(nameof(TopBackHighlightColor), value); }
     }
 
     [DefaultValue(0)]
     public int ChatMode
     {
-        get { return GetPropertyValue<int>(nameof(ChatMode)); }
-        set { SetPropertyValue(nameof(ChatMode), value); }
+      get { return GetPropertyValue<int>(nameof(ChatMode)); }
+      set { SetPropertyValue(nameof(ChatMode), value); }
     }
 
     [DefaultValue("")]
     public string URLBack
     {
-        get { return GetPropertyValue<string>(nameof(URLBack)); }
-        set { SetPropertyValue(nameof(URLBack), value); }
+      get { return GetPropertyValue<string>(nameof(URLBack)); }
+      set { SetPropertyValue(nameof(URLBack), value); }
     }
 
     [DefaultValue("")]
     public string Category
     {
-        get { return GetPropertyValue<string>(nameof(Category)); }
-        set { SetPropertyValue(nameof(Category), value); }
+      get { return GetPropertyValue<string>(nameof(Category)); }
+      set { SetPropertyValue(nameof(Category), value); }
     }
 
     [DefaultValue("")]
     public string Topic
     {
-        get { return GetPropertyValue<string>(nameof(Topic)); }
-        set { SetPropertyValue(nameof(Topic), value); }
+      get { return GetPropertyValue<string>(nameof(Topic)); }
+      set { SetPropertyValue(nameof(Topic), value); }
     }
 
     [DefaultValue("")]
     public string WelcomeMsg
     {
-        get { return GetPropertyValue<string>(nameof(WelcomeMsg)); }
-        set { SetPropertyValue(nameof(WelcomeMsg), value); }
+      get { return GetPropertyValue<string>(nameof(WelcomeMsg)); }
+      set { SetPropertyValue(nameof(WelcomeMsg), value); }
     }
 
     [DefaultValue("http://chat.msn.com/")]
     public string BaseURL
     {
-        get { return GetPropertyValue<string>(nameof(BaseURL)); }
-        set { SetPropertyValue(nameof(BaseURL), value); }
+      get { return GetPropertyValue<string>(nameof(BaseURL)); }
+      set { SetPropertyValue(nameof(BaseURL), value); }
     }
 
     [DefaultValue(typeof(Color), "255, 74, 101, 156")]
     public Color InputBorderColor
     {
-        get { return GetPropertyValue<Color>(nameof(InputBorderColor)); }
-        set { SetPropertyValue(nameof(InputBorderColor), value); }
+      get { return GetPropertyValue<Color>(nameof(InputBorderColor)); }
+      set { SetPropertyValue(nameof(InputBorderColor), value); }
     }
 
     [DefaultValue("")]
     public string CreateRoom
     {
-        get { return GetPropertyValue<string>(nameof(CreateRoom)); }
-        set { SetPropertyValue(nameof(CreateRoom), value); }
+      get { return GetPropertyValue<string>(nameof(CreateRoom)); }
+      set { SetPropertyValue(nameof(CreateRoom), value); }
     }
 
     [DefaultValue("")]
     public string ChatHome
     {
-        get { return GetPropertyValue<string>(nameof(ChatHome)); }
-        set { SetPropertyValue(nameof(ChatHome), value); }
+      get { return GetPropertyValue<string>(nameof(ChatHome)); }
+      set { SetPropertyValue(nameof(ChatHome), value); }
     }
 
     [DefaultValue("")]
     public string Locale
     {
-        get { return GetPropertyValue<string>(nameof(Locale)); }
-        set { SetPropertyValue(nameof(Locale), value); }
+      get { return GetPropertyValue<string>(nameof(Locale)); }
+      set { SetPropertyValue(nameof(Locale), value); }
     }
 
     [DefaultValue("")]
     public string ResDLL
     {
-        get { return GetPropertyValue<string>(nameof(ResDLL)); }
-        set { SetPropertyValue(nameof(ResDLL), value); }
+      get { return GetPropertyValue<string>(nameof(ResDLL)); }
+      set { SetPropertyValue(nameof(ResDLL), value); }
     }
 
     [DefaultValue(typeof(Color), "Black")]
     public Color ButtonTextColor
     {
-        get { return GetPropertyValue<Color>(nameof(ButtonTextColor)); }
-        set { SetPropertyValue(nameof(ButtonTextColor), value); }
+      get { return GetPropertyValue<Color>(nameof(ButtonTextColor)); }
+      set { SetPropertyValue(nameof(ButtonTextColor), value); }
     }
 
     [DefaultValue(typeof(Color), "255, 202, 224, 245")]
     public Color ButtonBackColor
     {
-        get { return GetPropertyValue<Color>(nameof(ButtonBackColor)); }
-        set { SetPropertyValue(nameof(ButtonBackColor), value); }
+      get { return GetPropertyValue<Color>(nameof(ButtonBackColor)); }
+      set { SetPropertyValue(nameof(ButtonBackColor), value); }
     }
 
     [DefaultValue("")]
     public string PassportTicket
     {
-        get { return GetPropertyValue<string>(nameof(PassportTicket)); }
-        set { SetPropertyValue(nameof(PassportTicket), value); }
+      get { return GetPropertyValue<string>(nameof(PassportTicket)); }
+      set { SetPropertyValue(nameof(PassportTicket), value); }
     }
 
     [DefaultValue("")]
     public string PassportProfile
     {
-        get { return GetPropertyValue<string>(nameof(PassportProfile)); }
-        set { SetPropertyValue(nameof(PassportProfile), value); }
+      get { return GetPropertyValue<string>(nameof(PassportProfile)); }
+      set { SetPropertyValue(nameof(PassportProfile), value); }
     }
 
     [DefaultValue(0)]
     public uint Feature
     {
-        get { return GetPropertyValue<uint>(nameof(Feature)); }
-        set { SetPropertyValue(nameof(Feature), value); }
+      get { return GetPropertyValue<uint>(nameof(Feature)); }
+      set { SetPropertyValue(nameof(Feature), value); }
     }
 
-    [DefaultValue("Welcome to MSN Chat! MSN does not control or endorse the content, messages or information found in chat. MSN specifically disclaims any liability with regard to these areas. To review the MSN Chat guidelines, go to http://groups.msn.com/conduct NOTICE: To help protect you from spam, MSN Chat is now available by subscription only. Learn more at http://getchat.msn.com")]
+    [DefaultValue(
+      "Welcome to MSN Chat! MSN does not control or endorse the content, messages or information found in chat. MSN specifically disclaims any liability with regard to these areas. To review the MSN Chat guidelines, go to http://groups.msn.com/conduct NOTICE: To help protect you from spam, MSN Chat is now available by subscription only. Learn more at http://getchat.msn.com"
+    )]
     public string MessageOfTheDay
     {
-        get { return GetPropertyValue<string>(nameof(MessageOfTheDay)); }
-        set { SetPropertyValue(nameof(MessageOfTheDay), value); }
+      get { return GetPropertyValue<string>(nameof(MessageOfTheDay)); }
+      set { SetPropertyValue(nameof(MessageOfTheDay), value); }
     }
 
     [DefaultValue("")]
     public string ChannelLanguage
     {
-        get { return GetPropertyValue<string>(nameof(ChannelLanguage)); }
-        set { SetPropertyValue(nameof(ChannelLanguage), value); }
+      get { return GetPropertyValue<string>(nameof(ChannelLanguage)); }
+      set { SetPropertyValue(nameof(ChannelLanguage), value); }
     }
 
     [DefaultValue("")]
     public string InvitationCode
     {
-        get { return GetPropertyValue<string>(nameof(InvitationCode)); }
-        set { SetPropertyValue(nameof(InvitationCode), value); }
+      get { return GetPropertyValue<string>(nameof(InvitationCode)); }
+      set { SetPropertyValue(nameof(InvitationCode), value); }
     }
 
     [DefaultValue("")]
     public string NicknameToInvite
     {
-        get { return GetPropertyValue<string>(nameof(NicknameToInvite)); }
-        set { SetPropertyValue(nameof(NicknameToInvite), value); }
+      get { return GetPropertyValue<string>(nameof(NicknameToInvite)); }
+      set { SetPropertyValue(nameof(NicknameToInvite), value); }
     }
 
     [DefaultValue("")]
     public string MSNREGCookie
     {
-        get { return GetPropertyValue<string>(nameof(MSNREGCookie)); }
-        set { SetPropertyValue(nameof(MSNREGCookie), value); }
+      get { return GetPropertyValue<string>(nameof(MSNREGCookie)); }
+      set { SetPropertyValue(nameof(MSNREGCookie), value); }
     }
 
     [DefaultValue("f")]
     public string CreationModes
     {
-        get { return GetPropertyValue<string>(nameof(CreationModes)); }
-        set { SetPropertyValue(nameof(CreationModes), value); }
+      get { return GetPropertyValue<string>(nameof(CreationModes)); }
+      set { SetPropertyValue(nameof(CreationModes), value); }
     }
 
     [DefaultValue("")]
     public string MSNProfile
     {
-        get { return GetPropertyValue<string>(nameof(MSNProfile)); }
-        set { SetPropertyValue(nameof(MSNProfile), value); }
+      get { return GetPropertyValue<string>(nameof(MSNProfile)); }
+      set { SetPropertyValue(nameof(MSNProfile), value); }
     }
 
     [DefaultValue("en-us")]
     public string Market
     {
-        get { return GetPropertyValue<string>(nameof(Market)); }
-        set { SetPropertyValue(nameof(Market), value); }
+      get { return GetPropertyValue<string>(nameof(Market)); }
+      set { SetPropertyValue(nameof(Market), value); }
     }
 
     [DefaultValue("http://chat.msn.com/whisper.msnw")]
     public string WhisperContent
     {
-        get { return GetPropertyValue<string>(nameof(WhisperContent)); }
-        set { SetPropertyValue(nameof(WhisperContent), value); }
+      get { return GetPropertyValue<string>(nameof(WhisperContent)); }
+      set { SetPropertyValue(nameof(WhisperContent), value); }
     }
 
     [DefaultValue("")]
     public string UserRole
     {
-        get { return GetPropertyValue<string>(nameof(UserRole)); }
-        set { SetPropertyValue(nameof(UserRole), value); }
+      get { return GetPropertyValue<string>(nameof(UserRole)); }
+      set { SetPropertyValue(nameof(UserRole), value); }
     }
 
-    [DefaultValue("Note: MSN has detected that you are connected to this chat session from the IP address <B>%1</B>.")]
+    [DefaultValue(
+      "Note: MSN has detected that you are connected to this chat session from the IP address <B>%1</B>."
+    )]
     public string AuditMessage
     {
-        get { return GetPropertyValue<string>(nameof(AuditMessage)); }
-        set { SetPropertyValue(nameof(AuditMessage), value); }
+      get { return GetPropertyValue<string>(nameof(AuditMessage)); }
+      set { SetPropertyValue(nameof(AuditMessage), value); }
     }
 
     [DefaultValue("")]
     public string SubscriberInfo
     {
-        get { return GetPropertyValue<string>(nameof(SubscriberInfo)); }
-        set { SetPropertyValue(nameof(SubscriberInfo), value); }
+      get { return GetPropertyValue<string>(nameof(SubscriberInfo)); }
+      set { SetPropertyValue(nameof(SubscriberInfo), value); }
     }
 
     [DefaultValue("")]
     public string UpsellURL
     {
-        get { return GetPropertyValue<string>(nameof(UpsellURL)); }
-        set { SetPropertyValue(nameof(UpsellURL), value); }
+      get { return GetPropertyValue<string>(nameof(UpsellURL)); }
+      set { SetPropertyValue(nameof(UpsellURL), value); }
     }
   }
 }

@@ -9,7 +9,11 @@ namespace MSNChat
     public MDIChatClient()
     {
       InitializeComponent();
-      this.Activated += (s, e) => { if (ActiveMdiChild is ChatRoom) treeView.SelectedNode = ((ChatRoom)ActiveMdiChild).rootTreeNode; };
+      this.Activated += (s, e) =>
+      {
+        if (ActiveMdiChild is ChatRoom)
+          treeView.SelectedNode = ((ChatRoom)ActiveMdiChild).rootTreeNode;
+      };
     }
 
     private void ShowNewForm(object sender, EventArgs e)
@@ -23,7 +27,9 @@ namespace MSNChat
     private void OpenFile(object sender, EventArgs e)
     {
       OpenFileDialog openFileDialog = new OpenFileDialog();
-      openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+      openFileDialog.InitialDirectory = Environment.GetFolderPath(
+        Environment.SpecialFolder.Personal
+      );
       openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
       if (openFileDialog.ShowDialog(this) == DialogResult.OK)
       {
@@ -34,7 +40,9 @@ namespace MSNChat
     private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
     {
       SaveFileDialog saveFileDialog = new SaveFileDialog();
-      saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+      saveFileDialog.InitialDirectory = Environment.GetFolderPath(
+        Environment.SpecialFolder.Personal
+      );
       saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
       if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
       {
@@ -47,17 +55,11 @@ namespace MSNChat
       this.Close();
     }
 
-    private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-    }
+    private void CutToolStripMenuItem_Click(object sender, EventArgs e) { }
 
-    private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-    }
+    private void CopyToolStripMenuItem_Click(object sender, EventArgs e) { }
 
-    private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-    }
+    private void PasteToolStripMenuItem_Click(object sender, EventArgs e) { }
 
     private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
     {

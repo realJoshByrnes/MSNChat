@@ -16,9 +16,9 @@ namespace MSNChatControlLibrary
     private void InitializeComponent()
     {
       SuspendLayout();
-      // 
+      //
       // ChatSettingsControl
-      // 
+      //
       Name = "ChatSettingsControl";
       Load += ChatSettingsControl_Load;
       ResumeLayout(false);

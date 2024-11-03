@@ -1,6 +1,6 @@
-using MSNChatControlLibrary;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using MSNChatControlLibrary;
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.WindowsAndMessaging;
@@ -11,6 +11,7 @@ namespace MSNChat
   {
     public TreeNode rootTreeNode;
     private TreeView treeView;
+
     // Dictionary of Whisper Window (child) tree nodes.
     private Dictionary<HWND, TreeNode> wwTreeNodes = new();
 
@@ -82,7 +83,10 @@ namespace MSNChat
           case PInvoke.WM_SETTEXT:
             if (wwTreeNodes.TryGetValue(cwp.hwnd, out TreeNode? node2))
             {
-              treeView.BeginInvoke(() => { node2.Text = WinUtils.GetWindowText(cwp.hwnd); }); // TODO: Get the param directly from the message
+              treeView.BeginInvoke(() =>
+              {
+                node2.Text = WinUtils.GetWindowText(cwp.hwnd);
+              }); // TODO: Get the param directly from the message
             }
             break;
           case PInvoke.WM_ACTIVATE:
