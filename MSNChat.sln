@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSNChatControl", "MSNChatControl\MSNChatControl.csproj", "{0389CC2E-943E-4A70-BBE5-F73067B3D166}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSNChatControlLibrary", "MSNChatControlLibrary\MSNChatControlLibrary.csproj", "{AC5351AF-2338-47D2-8007-303A862A67C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,14 +28,14 @@ Global
 		{8DBA2A73-AF61-477E-8893-0DE1E7438C99}.Release|Any CPU.Build.0 = Release|x86
 		{8DBA2A73-AF61-477E-8893-0DE1E7438C99}.Release|x86.ActiveCfg = Release|x86
 		{8DBA2A73-AF61-477E-8893-0DE1E7438C99}.Release|x86.Build.0 = Release|x86
-		{0389CC2E-943E-4A70-BBE5-F73067B3D166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0389CC2E-943E-4A70-BBE5-F73067B3D166}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0389CC2E-943E-4A70-BBE5-F73067B3D166}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{0389CC2E-943E-4A70-BBE5-F73067B3D166}.Debug|x86.Build.0 = Debug|Any CPU
-		{0389CC2E-943E-4A70-BBE5-F73067B3D166}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0389CC2E-943E-4A70-BBE5-F73067B3D166}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0389CC2E-943E-4A70-BBE5-F73067B3D166}.Release|x86.ActiveCfg = Release|Any CPU
-		{0389CC2E-943E-4A70-BBE5-F73067B3D166}.Release|x86.Build.0 = Release|Any CPU
+		{AC5351AF-2338-47D2-8007-303A862A67C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5351AF-2338-47D2-8007-303A862A67C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5351AF-2338-47D2-8007-303A862A67C2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC5351AF-2338-47D2-8007-303A862A67C2}.Debug|x86.Build.0 = Debug|Any CPU
+		{AC5351AF-2338-47D2-8007-303A862A67C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5351AF-2338-47D2-8007-303A862A67C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5351AF-2338-47D2-8007-303A862A67C2}.Release|x86.ActiveCfg = Release|Any CPU
+		{AC5351AF-2338-47D2-8007-303A862A67C2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

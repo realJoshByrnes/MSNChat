@@ -1,5 +1,4 @@
-using MSNChatControl;
-using System.Diagnostics;
+using MSNChatControlLibrary;
 
 namespace MSNChat
 {
@@ -113,7 +112,7 @@ namespace MSNChat
     private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
     {
       Form form = new Form();
-      var cs = new ChatSettings();
+      var cs = new ChatSettingsControl();
       cs.Dock = DockStyle.Fill;
       form.Controls.Add(cs);
       form.Text = "Chat Settings";

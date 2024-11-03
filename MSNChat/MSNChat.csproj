@@ -38,7 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MSNChatControl\MSNChatControl.csproj" />
+    <ProjectReference Include="..\MSNChatControlLibrary\MSNChatControlLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>

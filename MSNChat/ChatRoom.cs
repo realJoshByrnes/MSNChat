@@ -1,3 +1,4 @@
+using MSNChatControlLibrary;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Windows.Win32;
@@ -25,23 +26,23 @@ namespace MSNChat
       this.FormClosed += (s, e) => rootTreeNode.Remove();
       this.Activated += (s, e) => treeView.SelectedNode = rootTreeNode;
 
-      chatFrame1.OcxHandleCreated += new EventHandler(chatFrame1_OcxHandleCreated);
+      //chatFrame1.OcxHandleCreated += new EventHandler(chatFrame1_OcxHandleCreated);
     }
 
-    private void chatFrame1_OcxHandleCreated(object? sender, EventArgs e)
-    {
-      // Now that we have an OCX hWnd, get the (child) CWhisperManager hWnd;
-      HWND hwndCWM = PInvoke.FindWindowEx((HWND)chatFrame1.OcxHandle, (HWND)IntPtr.Zero, "CWhisperManager", null);
-      uint threadCWM;
-      uint processCWM; // We don't actually need this, but it's worth keeping to show why it needs to be unsafe.
-      // Get CWhisperManager ThreadID and ProcessID (all Whisper Windows are on this thread).
-      unsafe
-      {
-        threadCWM = PInvoke.GetWindowThreadProcessId(hwndCWM, &processCWM);
-      }
-      // Set a hook on the CWhisperManager window's thread.
-      PInvoke.SetWindowsHookEx(WINDOWS_HOOK_ID.WH_CALLWNDPROCRET, new HOOKPROC(HookProc), (HINSTANCE)0, threadCWM);
-    }
+    //private void chatFrame1_OcxHandleCreated(object? sender, EventArgs e)
+    //{
+    //  // Now that we have an OCX hWnd, get the (child) CWhisperManager hWnd;
+    //  HWND hwndCWM = PInvoke.FindWindowEx((HWND)chatFrame1.Handle, (HWND)IntPtr.Zero, "CWhisperManager", null);
+    //  uint threadCWM;
+    //  uint processCWM; // We don't actually need this, but it's worth keeping to show why it needs to be unsafe.
+    //  // Get CWhisperManager ThreadID and ProcessID (all Whisper Windows are on this thread).
+    //  unsafe
+    //  {
+    //    threadCWM = PInvoke.GetWindowThreadProcessId(hwndCWM, &processCWM);
+    //  }
+    //  // Set a hook on the CWhisperManager window's thread.
+    //  PInvoke.SetWindowsHookEx(WINDOWS_HOOK_ID.WH_CALLWNDPROCRET, new HOOKPROC(HookProc), (HINSTANCE)0, threadCWM);
+    //}
 
     // https://learn.microsoft.com/en-us/windows/win32/api/winuser/nc-winuser-hookproc
     LRESULT HookProc(int code, WPARAM wParam, LPARAM lParam)
@@ -67,7 +68,8 @@ namespace MSNChat
           case PInvoke.WM_DESTROY:
             if (wwTreeNodes.TryGetValue(cwp.hwnd, out TreeNode? node))
             {
-              treeView.BeginInvoke(() => {
+              treeView.BeginInvoke(() =>
+              {
                 node?.Remove();
               });
               wwTreeNodes.Remove(cwp.hwnd);
