@@ -25,5 +25,8 @@ GetWindowThreadProcessId
 GetWindowTextLength
 PostMessage
 SetForegroundWindow
+SetProcessDEPPolicy
 SetWindowsHookEx
 TrackPopupMenu
+
+GetProcessDEPPolicy
