@@ -35,6 +35,7 @@ namespace MSNChat
       // 
       // msnChatControl1
       // 
+      msnChatControl1.BackColor = Color.FromArgb(255, 192, 255);
       msnChatControl1.Dock = DockStyle.Fill;
       msnChatControl1.Feature = 0U;
       msnChatControl1.Location = new Point(0, 0);

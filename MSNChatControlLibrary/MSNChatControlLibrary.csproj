@@ -14,9 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Interop.MSNChat">
-      <HintPath>MSNChat\Interop.MSNChat.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Interop.MSNChat\Interop.MSNChat.csproj" />
   </ItemGroup>
 
 </Project>
